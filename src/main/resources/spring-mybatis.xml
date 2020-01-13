@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--
+        扫描排除Controller以外的实例
+    -->
+    <context:component-scan base-package="com.javakc.ssm">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--
+        读取jdbc.properties配置文件
+    -->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <!--
+        数据库连接池(数据源)
+        init-method: 数据源类实例化完成后, 创建数据库连接池
+        destroy-method: 数据源类销毁前, 主动关闭连接池(归还连接给数据库)
+    -->
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" init-method="createDataSource" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!--
+        mybatis的SqlSessionFactory
+        dataSource注入数据源
+    -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--   数据源的注入     -->
+        <property name="dataSource" ref="dataSource"/>
+        <!--   为对象提供别名(类的包路径)     -->
+        <property name="typeAliasesPackage" value="com.javakc.ssm.*.entity"/>
+        <!--   扫描mybatis的mapper文件     -->
+        <property name="mapperLocations" value="classpath:mapper/*Mapper.xml"/>
+    </bean>
+
+    <!--
+        mybatis与spring整合
+        basePackage: 扫描数据层接口, 为接口生成动态代理实例
+        sqlSessionFactoryBeanName: 把sqlSessionFactory注入到代理实例中
+    -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.javakc.ssm.*.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
+
+    <!--
+        事务管理器
+    -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--
+        Aop横切需要绑定事务的逻辑层方法
+    -->
+    <aop:config>
+        <aop:pointcut id="transactionMethod" expression="execution(* com.javakc.ssm.*.service.impl.*.*(..))"/>
+        <!--   事务的环绕通知    -->
+        <aop:advisor advice-ref="transactionAdvice" pointcut-ref="transactionMethod"/>
+    </aop:config>
+
+    <!--
+        事务的通知(声明型事务配置)
+    -->
+    <tx:advice id="transactionAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="insert*"/>
+            <tx:method name="delete*"/>
+            <tx:method name="update*"/>
+            <tx:method name="query*" read-only="true" propagation="SUPPORTS"/>
+            <tx:method name="*" read-only="true"  propagation="SUPPORTS"/>
+        </tx:attributes>
+    </tx:advice>
+
+</beans>
