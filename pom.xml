@@ -37,7 +37,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <!--   spring ioc, aop, jdbc, mvc, test     -->
-        <spring.version>5.2.2.RELEASE</spring.version>
+        <spring.version>5.2.7.RELEASE</spring.version>
         <!--   mybatis core     -->
         <mybatis.version>3.5.3</mybatis.version>
         <!--   mybatis与spring整合     -->
