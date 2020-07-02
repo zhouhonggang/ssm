@@ -6,7 +6,7 @@
     SpringMVC 5.2.2
     Mybatis 3.5.3
     commons-dbcp2 2.7.0
-    mysql 5.1.37
+    mysql 8.0.16
 
 ## 数据库
     修改 src/main/resources/jdbc.properties    
