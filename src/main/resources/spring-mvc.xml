@@ -36,4 +36,16 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!-- 设置文件上传配置 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 文件上传头部编码 -->
+        <property name="defaultEncoding" value="UTF-8"/>
+        <!-- 上传文件大小限制  1024*1024*30(30M) -->
+        <property name="maxUploadSize" value="31457280"/>
+        <!-- 读取文件到内存中最大的字节数，默认是1024 -->
+        <property name="maxInMemorySize" value="2048"/>
+        <!-- 文件上传暂存目录，文件上传完成之后会清除该目录 -->
+        <property name="uploadTempDir" value="upload/temp"/>
+    </bean>
+
 </beans>

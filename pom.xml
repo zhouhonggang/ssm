@@ -46,16 +46,18 @@
         <mysql.version>8.0.16</mysql.version>
         <!--   apache dbcp2连接池     -->
         <dbcp2.version>2.7.0</dbcp2.version>
-        <!--   junit 单元测试   -->
-        <junit.version>4.12</junit.version>
         <!--   servlet api     -->
         <servlet.version>3.1.0</servlet.version>
         <!--   spring mvc json     -->
         <jackson.version>2.10.2</jackson.version>
+        <!--   fileupload   -->
+        <fileupload.version>1.4</fileupload.version>
         <!--   lombok get set     -->
         <lombok.version>1.18.10</lombok.version>
         <!--   jstl expression     -->
         <jstl.version>1.2</jstl.version>
+        <!--   junit 单元测试   -->
+        <junit.version>4.12</junit.version>
     </properties>
 
     <dependencies>
@@ -83,7 +85,6 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
         <!--   mybatis core     -->
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -96,21 +97,19 @@
             <artifactId>mybatis-spring</artifactId>
             <version>${mybatis-spring.version}</version>
         </dependency>
-
         <!--    mysql driver    -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
+            <scope>runtime</scope>
         </dependency>
-
         <!--   apache dbcp2     -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-dbcp2</artifactId>
             <version>${dbcp2.version}</version>
         </dependency>
-
         <!--    servlet-api    -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -118,28 +117,31 @@
             <version>${servlet.version}</version>
             <scope>provided</scope>
         </dependency>
-
         <!--    spring mvc json   -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-
+        <!--   fileupload.version   -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>${fileupload.version}</version>
+        </dependency>
         <!--   lombok     -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
+            <scope>runtime</scope>
         </dependency>
-
         <!--   jstl     -->
         <dependency>
             <groupId>jstl</groupId>
             <artifactId>jstl</artifactId>
             <version>${jstl.version}</version>
         </dependency>
-
         <!--   spring-test     -->
         <dependency>
             <groupId>org.springframework</groupId>
