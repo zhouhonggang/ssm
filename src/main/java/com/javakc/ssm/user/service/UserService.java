@@ -26,7 +26,7 @@ public interface UserService {
      * @param id 主键ID
      * @return 状态
      */
-    public int delete(String id);
+    public int delete(int id);
 
     /**
      * 查询所有记录
@@ -39,7 +39,7 @@ public interface UserService {
      * @param id 主键ID
      * @return 结果
      */
-    public User queryById(String id);
+    public User queryById(int id);
 
     /**
      * 查询总条数

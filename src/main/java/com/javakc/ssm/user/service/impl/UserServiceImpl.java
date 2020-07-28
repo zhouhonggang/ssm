@@ -17,7 +17,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int insert(User entity) {
-        entity.setId(UUID.randomUUID().toString().replace("-", ""));
         return userDao.insert(entity);
     }
 
@@ -27,7 +26,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int delete(String id) {
+    public int delete(int id) {
         return userDao.delete(id);
     }
 
@@ -37,7 +36,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User queryById(String id) {
+    public User queryById(int id) {
         return userDao.queryById(id);
     }
 

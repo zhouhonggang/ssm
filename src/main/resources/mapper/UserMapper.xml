@@ -5,8 +5,8 @@
 <mapper namespace="com.javakc.ssm.user.dao.UserDao">
 
     <insert id="insert" parameterType="user">
-        insert into ssm_user(id, name, age, gender, phone, birthday, address)
-            values(#{id}, #{name}, #{age}, #{gender}, #{phone}, #{birthday}, #{address})
+        insert into ssm_user(name, age, gender, phone, birthday, address)
+            values(#{name}, #{age}, #{gender}, #{phone}, #{birthday}, #{address})
     </insert>
 
     <update id="update" parameterType="user">
@@ -14,7 +14,7 @@
             address = #{address} where id = #{id}
     </update>
 
-    <delete id="delete" parameterType="string">
+    <delete id="delete" parameterType="int">
         delete from ssm_user where id = #{id}
     </delete>
 
@@ -26,7 +26,7 @@
         select count(1) from ssm_user
     </select>
 
-    <select id="queryById" parameterType="string" resultType="user">
+    <select id="queryById" parameterType="int" resultType="user">
         select id, name, age, gender, phone, birthday, address from ssm_user where id = #{id}
     </select>
 

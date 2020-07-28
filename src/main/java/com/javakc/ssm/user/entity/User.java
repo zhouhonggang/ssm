@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Data
 public class User {
-    private String id;// 用户主键ID
+    private int id;// 用户主键ID
     private String name;// 用户名称
     private int age;// 用户年龄
     private int gender;// 用户性别 1:男 2:女
