@@ -56,7 +56,7 @@
     </filter-mapping>
 
     <servlet>
-        <servlet-name>springmvc</servlet-name>
+        <servlet-name>springMvc</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
@@ -68,7 +68,7 @@
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>springmvc</servlet-name>
+        <servlet-name>springMvc</servlet-name>
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
 

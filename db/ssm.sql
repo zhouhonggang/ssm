@@ -1,10 +1,8 @@
 /*
-Navicat MySQL Data Transfer
-
 Source Server         : 127.0.0.1
 Source Server Version : 50729
 Source Host           : localhost:3306
-Source Database       : javakc80
+Source Database       : javakc
 
 Target Server Type    : MYSQL
 Target Server Version : 50729

@@ -28,10 +28,11 @@ public class UserController {
     }
 
     @RequestMapping("insert")
+    @LoggerAdvice(operations = "用户添加")
     public String insert(User entity)
     {
         userService.insert(entity);
-        return "redirect:query.do";
+        return "redirect:/user/query.do";
     }
 
 }

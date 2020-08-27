@@ -28,7 +28,7 @@ public class LoggerAspect {
 
     @AfterReturning("loggerPointcut()")
     public void afterReturning(JoinPoint joinPoint) {
-        //获取request，
+        //获取request
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         //通过aop切面JoinPoint类对象，获取该类，或者该方法，或者该方法的参数
         Class<? extends Object> clazz =  joinPoint.getTarget().getClass();
