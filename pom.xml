@@ -59,7 +59,7 @@
         <!--   jstl expression     -->
         <jstl.version>1.2</jstl.version>
         <!--   junit 单元测试   -->
-        <junit.version>4.13</junit.version>
+        <junit.version>4.13.1</junit.version>
     </properties>
 
     <dependencies>
