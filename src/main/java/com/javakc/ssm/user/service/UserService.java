@@ -47,4 +47,11 @@ public interface UserService {
      */
     public long queryByCount();
 
+    /**
+     * 根据账号密码获取用户
+     * @param name 账号
+     * @return 用户
+     */
+    public User queryByUser(String name);
+
 }

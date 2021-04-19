@@ -5,12 +5,12 @@
 <mapper namespace="com.javakc.ssm.user.dao.UserDao">
 
     <insert id="insert" parameterType="user">
-        insert into ssm_user(name, age, gender, phone, birthday, address)
-            values(#{name}, #{age}, #{gender}, #{phone}, #{birthday}, #{address})
+        insert into ssm_user(name, pass, nick, gender, phone, birthday, address)
+            values(#{name}, #{pass}, #{nick}, #{gender}, #{phone}, #{birthday}, #{address})
     </insert>
 
     <update id="update" parameterType="user">
-        update ssm_user set name = #{name}, age = #{age}, gender = #{gender}, phone = #{phone}, birthday = #{birthday},
+        update ssm_user set name = #{name}, nick = #{nick}, gender = #{gender}, phone = #{phone}, birthday = #{birthday},
             address = #{address} where id = #{id}
     </update>
 
@@ -19,7 +19,7 @@
     </delete>
 
     <select id="queryAll" resultType="user">
-        select id, name, age, gender, phone, birthday, address from ssm_user
+        select id, name, nick, gender, phone, birthday, address from ssm_user
     </select>
 
     <select id="queryByCount" resultType="long">
@@ -27,7 +27,11 @@
     </select>
 
     <select id="queryById" parameterType="int" resultType="user">
-        select id, name, age, gender, phone, birthday, address from ssm_user where id = #{id}
+        select id, name, nick, gender, phone, birthday, address from ssm_user where id = #{id}
+    </select>
+
+    <select id="queryByUser" resultType="user">
+        select id, name, pass, nick, gender, phone, birthday, address from ssm_user where name = #{name}
     </select>
 
 </mapper>

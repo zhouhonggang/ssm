@@ -1,6 +1,7 @@
 package com.javakc.ssm.user.dao;
 
 import com.javakc.ssm.user.entity.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -45,4 +46,11 @@ public interface UserDao {
      * @return 条数
      */
     public long queryByCount();
+
+    /**
+     * 根据账号密码获取用户
+     * @param name 账号
+     * @return 用户
+     */
+    public User queryByUser(String name);
 }

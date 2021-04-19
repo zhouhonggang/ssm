@@ -38,6 +38,8 @@
         <maven.compiler.target>11</maven.compiler.target>
         <!--   spring ioc, aop, jdbc, mvc, test     -->
         <spring.version>5.2.7.RELEASE</spring.version>
+        <!--   shiro spring    -->
+        <shiro.version>1.7.0</shiro.version>
         <!--   mybatis core     -->
         <mybatis.version>3.5.4</mybatis.version>
         <!--   mybatis与spring整合     -->
@@ -85,6 +87,11 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
         <!--   mybatis core     -->
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -123,7 +130,7 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-        <!--   fileupload.version   -->
+        <!--   file upload.version   -->
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
