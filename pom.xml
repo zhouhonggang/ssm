@@ -8,7 +8,7 @@
 
     <groupId>com.javakc</groupId>
     <artifactId>ssm</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1.0</version>
     <packaging>war</packaging>
 
     <name>ssm Maven Webapp</name>
@@ -52,7 +52,7 @@
         <servlet.version>3.1.0</servlet.version>
         <!--   spring mvc json     -->
         <jackson.version>2.10.2</jackson.version>
-        <!--   fileupload   -->
+        <!--   file upload   -->
         <fileupload.version>1.4</fileupload.version>
         <!--   lombok get set     -->
         <lombok.version>1.18.10</lombok.version>
@@ -87,6 +87,7 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <!--  shiro spring   -->
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring</artifactId>
