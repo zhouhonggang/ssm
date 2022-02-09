@@ -39,7 +39,7 @@
         <!--   spring ioc, aop, jdbc, mvc, test     -->
         <spring.version>5.2.7.RELEASE</spring.version>
         <!--   shiro spring    -->
-        <shiro.version>1.7.0</shiro.version>
+        <shiro.version>1.7.1</shiro.version>
         <!--   mybatis core     -->
         <mybatis.version>3.5.4</mybatis.version>
         <!--   mybatis与spring整合     -->
