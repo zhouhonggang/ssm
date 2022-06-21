@@ -45,7 +45,7 @@
         <!--   mybatis与spring整合     -->
         <mybatis-spring.version>2.0.4</mybatis-spring.version>
         <!--   mysql driver     -->
-        <mysql.version>8.0.16</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <!--   apache dbcp2连接池     -->
         <dbcp2.version>2.7.0</dbcp2.version>
         <!--   servlet api     -->
