@@ -51,7 +51,7 @@
         <!--   servlet api     -->
         <servlet.version>3.1.0</servlet.version>
         <!--   spring mvc json     -->
-        <jackson.version>2.10.2</jackson.version>
+        <jackson.version>2.12.6.1</jackson.version>
         <!--   file upload   -->
         <fileupload.version>1.4</fileupload.version>
         <!--   lombok get set     -->
