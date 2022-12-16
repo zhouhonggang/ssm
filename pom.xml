@@ -37,7 +37,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <!--   spring ioc, aop, jdbc, mvc, test     -->
-        <spring.version>5.2.7.RELEASE</spring.version>
+        <spring.version>5.2.20.RELEASE</spring.version>
         <!--   shiro spring    -->
         <shiro.version>1.7.0</shiro.version>
         <!--   mybatis core     -->
